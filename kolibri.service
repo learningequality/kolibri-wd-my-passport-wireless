@@ -1,0 +1,14 @@
+[Unit]
+Description=Kolibri
+After=network.target
+
+[Service]
+#Environment=KOLIBRI_RUN_MODE=wdmypassport
+Environment=KOLIBRI_HOME=/DataVolume/.kolibri
+Environment=PYTHONHOME=/DataVolume/python/
+Type=forking
+ExecStart=/DataVolume/python/bin/kolibri start
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
